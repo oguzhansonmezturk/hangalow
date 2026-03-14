@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangalow | Ardeşen, Rize - Doğanın Kalbinde Huzur</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <meta name="description"
+        content="Hangalow - Rize Ardeşen'de doğayla iç içe, modern bungalow konaklama. Jakuzi, şömine, havuz, ücretsiz kahvaltı ve eşsiz deniz manzarası.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=hero_amenities_110">
+</head>
+
+<body class="preload-active">
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader-content">
+            <img src="images/hangalowlogo.jpeg" alt="Hangalow Logo" class="preloader-logo">
+            <div class="preloader-line"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">
+                <img src="images/hangalowlogo.jpeg" alt="Hangalow Logo" class="logo-img">
+                <span class="logo-text">Hangalow</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about">Hakkımızda</a>
+                <a href="#amenities">Olanaklar</a>
+                <a href="#gallery">Galeri</a>
+                <a href="#location">Konum</a>
+                <a href="#reviews">Yorumlar</a>
+                <a href="#contact">İletişim</a>
+                <a href="#booking" class="nav-booking-btn">Rezervasyon</a>
+            </div>
+            <div class="nav-right">
+                <div class="lang-selector">
+                    <button class="lang-btn" aria-label="Dil Seçimi">
+                        <span class="lang-flag">🇹🇷</span> TR
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="lang-menu">
+                        <a href="?lang=tr" class="active"><span class="lang-flag">🇹🇷</span> Türkçe</a>
+                        <a href="?lang=en"><span class="lang-flag">🇬🇧</span> English</a>
+                        <a href="?lang=de"><span class="lang-flag">🇩🇪</span> Deutsch</a>
+                        <a href="?lang=ru"><span class="lang-flag">🇷🇺</span> Русский</a>
+                        <a href="?lang=ar"><span class="lang-flag">🇸🇦</span> العربية</a>
+                    </div>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Menü">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <img src="images/hero.jpeg" alt="Hangalow Teras ve Deniz Manzarası" loading="eager">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-location">Ardeşen / Rize</div>
+            <h1 class="hero-title">
+                <span class="hero-title-line">Hangalow</span>
+            </h1>
+            <div class="hero-tagline">Karadeniz'in Kalbinde Huzurlu Bir Kaçış</div>
+            <div class="hero-scroll">
+                <span>KEŞFET</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-grid">
+                                <div class="about-slider reveal">
+                    <div class="swiper aboutSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="images/dismekan11.jpeg" alt="Hangalow Dış Mekan" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="images/icmekan/icmekan8.jpeg" alt="Hangalow İç Mekan" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="images/icmekan/icmekan2.jpeg" alt="Hangalow Oturma Alanı" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="images/icmekan/icmekan6.jpeg" alt="Hangalow Detay" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="images/dismekan/dismekan8.jpeg" alt="Hangalow Manzara" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="images/dismekan/dismekan4.jpeg" alt="Hangalow Akşam Güzelliği" loading="lazy"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content reveal">
+                    <span class="section-tag">Hakkımızda</span>
+                    <h2 class="section-title">Yeşil ve Mavi'nin<br>Buluştuğu Nokta</h2>
+                    <div class="about-text-container">
+                        <p class="about-text">
+                            Doğanın tüm renklerini barındıran, Karadeniz'in eşsiz maviliğine karşı konumlanmış Hangalow'da, huzuru ve konforu bir arada sunuyoruz. Her sabah kuş sesleri ve deniz serinliği ile uyanacağınız unutulmaz bir deneyim sizi bekliyor.
+                        </p>
+                        <p class="about-text">
+                            3 katlı özenle tasarlanmış bungalowumuzda, doğanın seslerini dinlerken modern konforun tadını çıkarabilirsiniz.
+                        </p>
+                        <p class="about-text">
+                            Bungalowumuz, her katında ayrı yatak odası ve oturma alanı ile tasarlanmış olup, jakuzi, şömine, özel mutfak ve muhteşem deniz manzarasıyla misafirlerimize ev konforunu sunar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="section amenities bg-warm">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Olanaklar</span>
+                <h2 class="section-title">Konfor ve Hizmetler</h2>
+                <p class="section-desc">Konaklamayı kolaylaştıran temel detayları sade ve net bir düzende topladık; içerideki konfor ve dış mekandaki keyif birlikte akıyor.</p>
+            </div>
+            <div class="amenities-showcase reveal">
+                <article class="amenity-feature-card">
+                    <div class="amenity-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h16"/><path d="M6 13V9a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v4"/><path d="M5 13v2a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-2"/><path d="M8 7V5"/></svg>
+                    </div>
+                    <h3>Özel Jakuzi</h3>
+                    <p>Manzara eşliğinde sakin bir rahatlama alanı sunar.</p>
+                </article>
+                <article class="amenity-feature-card">
+                    <div class="amenity-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s4 3.4 4 7a4 4 0 1 1-8 0c0-3.6 4-7 4-7Z"/><path d="M8 21h8"/><path d="M9 18h6"/></svg>
+                    </div>
+                    <h3>Şömine</h3>
+                    <p>Akşam saatlerine sıcaklık katan sade iç mekan detayı.</p>
+                </article>
+                <article class="amenity-feature-card">
+                    <div class="amenity-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 2-2"/><path d="M3 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 2-2"/><path d="M4 8h16"/></svg>
+                    </div>
+                    <h3>Isıtmalı Havuz</h3>
+                    <p>Dört mevsim kullanılabilen dış mekan keyfi sağlar.</p>
+                </article>
+                <article class="amenity-feature-card">
+                    <div class="amenity-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z"/><path d="M15 10h1a2 2 0 0 1 0 4h-1"/><path d="M7 4h5"/></svg>
+                    </div>
+                    <h3>Ücretsiz Kahvaltı</h3>
+                    <p>Güne rahat ve düzenli bir başlangıç eşlik eder.</p>
+                </article>
+                <article class="amenity-feature-card">
+                    <div class="amenity-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h14"/><path d="M6 10v5a4 4 0 0 0 4 4h4a4 4 0 0 0 4-4v-5"/><path d="M8 6h8"/><path d="M10 4h4"/></svg>
+                    </div>
+                    <h3>Donanımlı Mutfak</h3>
+                    <p>Tabak, tencere ve hazırlık alanı bir arada sunulur.</p>
+                </article>
+                <article class="amenity-feature-card">
+                    <div class="amenity-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M8.5 16a6 6 0 0 1 7 0"/><path d="M12 20h.01"/></svg>
+                    </div>
+                    <h3>Wi-Fi</h3>
+                    <p>Hızlı ve kesintisiz internet bağlantısı.</p>
+                </article>
+                <article class="amenity-feature-card">
+                    <div class="amenity-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V6a5 5 0 0 1 10 0v3"/><rect x="5" y="9" width="14" height="11" rx="2"/><path d="M12 13v3"/></svg>
+                    </div>
+                    <h3>Özel Banyo</h3>
+                    <p>Kozmetik ürünleri ve saç kurutma ile tamamlanır.</p>
+                </article>
+                <article class="amenity-feature-card">
+                    <div class="amenity-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M8 5c1.5 1.5 1.5 3.5 0 5"/><path d="M16 5c-1.5 1.5-1.5 3.5 0 5"/><path d="M6 12h12"/><path d="M8 14c1.5 1.5 1.5 3.5 0 5"/><path d="M16 14c-1.5 1.5-1.5 3.5 0 5"/></svg>
+                    </div>
+                    <h3>Klima</h3>
+                    <p>Her mevsime uygun oda sıcaklığı.</p>
+                </article>
+                <article class="amenity-feature-card">
+                    <div class="amenity-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16l1.5-5h11L19 16"/><path d="M7 16h10"/><path d="M8 18h.01"/><path d="M16 18h.01"/><path d="M7 11l1.5-3h7L17 11"/></svg>
+                    </div>
+                    <h3>Ücretsiz Otopark</h3>
+                    <p>Kolay giriş çıkış için tesis içinde alan sunar.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Galeri</span>
+                <h2 class="section-title">Anılarınızı Birlikte Oluşturalım</h2>
+            </div>
+                            <div class="gallery-filters reveal">
+                    <button class="filter-btn active" data-filter="all"><span>Tüm Galeri</span><small>10 Kare</small></button>
+                    <button class="filter-btn" data-filter="icmekan"><span>İç Mekan</span><small>5 Kare</small></button>
+                    <button class="filter-btn" data-filter="dismanzara"><span>Dış Mekan & Manzara</span><small>5 Kare</small></button>
+                </div>
+                
+                <div class="gallery-grid reveal">
+                    <!-- İç Mekan -->
+                    <div class="gallery-item filter-item icmekan">
+                        <img src="images/icmekan/icmekan1.jpeg" alt="Yatak Odası" loading="lazy">
+                        <div class="gallery-overlay"><span>Büyüt</span></div>
+                    </div>
+                    <div class="gallery-item filter-item icmekan">
+                        <img src="images/icmekan/icmekan5.jpeg" alt="Jakuzi" loading="lazy">
+                        <div class="gallery-overlay"><span>Büyüt</span></div>
+                    </div>
+                    <div class="gallery-item filter-item icmekan">
+                        <img src="images/icmekan/bathroom.jpeg" alt="Banyo" loading="lazy">
+                        <div class="gallery-overlay"><span>Büyüt</span></div>
+                    </div>
+                    <div class="gallery-item filter-item icmekan">
+                        <img src="images/icmekan/icmekan2.jpeg" alt="Oturma Alanı" loading="lazy">
+                        <div class="gallery-overlay"><span>Büyüt</span></div>
+                    </div>
+                    <div class="gallery-item filter-item icmekan">
+                        <img src="images/icmekan/icmekan3.jpeg" alt="Yatak Odası 2" loading="lazy">
+                        <div class="gallery-overlay"><span>Büyüt</span></div>
+                    </div>
+
+                    <!-- Dış Mekan & Manzara -->
+                    <div class="gallery-item filter-item dismanzara">
+                        <img src="images/dismekan/dismekan1.jpeg" alt="Teras Manzarası" loading="lazy">
+                        <div class="gallery-overlay"><span>Büyüt</span></div>
+                    </div>
+                    <div class="gallery-item filter-item dismanzara">
+                        <img src="images/dismekan/dismekan2.jpeg" alt="Kış Manzarası" loading="lazy">
+                        <div class="gallery-overlay"><span>Büyüt</span></div>
+                    </div>
+                    <div class="gallery-item filter-item dismanzara">
+                        <img src="images/dismekan/dismekan3.jpeg" alt="Teras" loading="lazy">
+                        <div class="gallery-overlay"><span>Büyüt</span></div>
+                    </div>
+                    <div class="gallery-item filter-item dismanzara">
+                        <img src="images/dismekan/dismekan7.jpeg" alt="Kahvaltı" loading="lazy">
+                        <div class="gallery-overlay"><span>Büyüt</span></div>
+                    </div>
+                    <div class="gallery-item filter-item dismanzara">
+                        <img src="images/dismekan/dismekan8.jpeg" alt="Dış Görünüm" loading="lazy">
+                        <div class="gallery-overlay"><span>Büyüt</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Kapat">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Önceki">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Sonraki">&#10095;</button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="">
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    
+
+    <!-- Policies & Good to Know -->
+    <section class="section policies bg-warm">
+        <div class="container">
+            <div class="policies-grid">
+                <div class="policy-card reveal">
+                    <h3>Giriş & Çıkış</h3>
+                    <div class="times">
+                        <div><strong>Giriş Saati:</strong><span>14:00</span></div>
+                        <div><strong>Çıkış Saati:</strong><span>11:00</span></div>
+                    </div>
+                </div>
+                <div class="policy-card reveal">
+                    <h3>Önemli Bilgiler</h3>
+                    <ul>
+                        <li>18 yaş ve üzeri misafirler check-in işlemi yapabilir.</li>
+                        <li>Portatif/ilave yatak veya beşik (çocuk yatağı) mevcut değildir.</li>
+                        <li>Tesisimize evcil hayvan kabul edilmemektedir.</li>
+                        <li>Tüm odalarımızda ve kapalı alanlarımızda sigara kullanımı yasaktır.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section location">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Konum & Çevre</span>
+                <h2 class="section-title">Keşfedilecek Çok Yer Var</h2>
+                <p class="section-desc">Hangalow; Ardeşen merkezine, doğa rotalarına ve bölgenin en sevilen manzaralarına kısa sürüş mesafesinde yer alır.</p>
+            </div>
+            <div class="location-grid">
+                <div class="location-split reveal">
+                    <div class="location-left-content">
+                        <span class="location-kicker">Deniz, dere ve yayla rotaları aynı hatta</span>
+                        <h2 class="nearby-header">Merkezi Noktalara Uzaklıklar</h2>
+                        <p class="location-copy">Güne sahilde başlayıp gün içinde Fırtına Vadisi, Ayder ve Kaçkar hattına uzanabileceğiniz dengeli bir konumda konaklayın.</p>
+                        <div class="nearby-list">
+                            <div class="nearby-item">
+                                <div>
+                                    <span class="nearby-name">Ardeşen Limanı</span>
+                                    <span class="nearby-type">Sahil hattı</span>
+                                </div>
+                                <strong class="nearby-distance">2,9 km</strong>
+                            </div>
+                            <div class="nearby-item">
+                                <div>
+                                    <span class="nearby-name">Fırtına Deresi</span>
+                                    <span class="nearby-type">Doğa rotası</span>
+                                </div>
+                                <strong class="nearby-distance">10 km</strong>
+                            </div>
+                            <div class="nearby-item">
+                                <div>
+                                    <span class="nearby-name">Kız Kalesi</span>
+                                    <span class="nearby-type">Tarihi durak</span>
+                                </div>
+                                <strong class="nearby-distance">13 km</strong>
+                            </div>
+                            <div class="nearby-item">
+                                <div>
+                                    <span class="nearby-name">Rize Havalimanı (RZV)</span>
+                                    <span class="nearby-type">Kolay ulaşım</span>
+                                </div>
+                                <strong class="nearby-distance">15,7 km</strong>
+                            </div>
+                            <div class="nearby-item">
+                                <div>
+                                    <span class="nearby-name">Ayder Yaylası</span>
+                                    <span class="nearby-type">Yayla kaçamağı</span>
+                                </div>
+                                <strong class="nearby-distance">35,8 km</strong>
+                            </div>
+                            <div class="nearby-item">
+                                <div>
+                                    <span class="nearby-name">Zil Kale</span>
+                                    <span class="nearby-type">Panoramik rota</span>
+                                </div>
+                                <strong class="nearby-distance">39,6 km</strong>
+                            </div>
+                            <div class="nearby-item">
+                                <div>
+                                    <span class="nearby-name">Kaçkar Dağları Milli Parkı</span>
+                                    <span class="nearby-type">Doğa keşfi</span>
+                                </div>
+                                <strong class="nearby-distance">39,7 km</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.449338806438!2d41.02617279999999!3d41.190176300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40664938b74b13e1%3A0x19a4b9951602e097!2sHangalow%20Villa!5e0!3m2!1str!2str!4v1773401478387!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Hangalow Konumu"></iframe>
+                        <div class="map-card">
+                            <span class="map-card-label">Konaklama Konumu</span>
+                            <h3>Merkeze yakın, manzaraya hakim bir başlangıç noktası</h3>
+                            <p>Karadeniz kıyısı, Fırtına Vadisi ve yayla rotaları arasında pratik bir geçiş sunar.</p>
+                            <a class="map-link" href="https://maps.google.com/?q=Hangalow%20House%20Ardesen%20Rize" target="_blank" rel="noopener noreferrer">Haritada Yol Tarifi Al</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section reviews bg-warm">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Yorumlar</span>
+                <h2 class="section-title">Misafirlerimiz Ne Diyor?</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p>"Geçirdiğimiz harika tatil için çok teşekkürler! Bungalovun manzarası gerçekten büyüleyiciydi, her sabah bu güzelliğe uyanmak inanılmazdı. İşletme sahibi son derece güler yüzlü ve ilgiliydi, kendimizi evimizde gibi hissettik. İlk fırsatta tekrar geleceğiz!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">H</div>
+                        <div>
+                            <span class="reviewer-name">H.V.</span>
+                            <span class="reviewer-meta">Google · 1 yıl önce</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p>"Çay bahçelerinin tam arasında deniz manzarasına karşı konaklamak tarifsiz bir huzur verdi. Bungalov tertemizdi, ihtiyacımız olan her şey en ince ayrıntısına kadar düşünülmüştü. Isıtmalı havuz sayesinde yağmur yağarken bile yüzmek inanılmaz keyifliydi."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">A</div>
+                        <div>
+                            <span class="reviewer-name">A.A.</span>
+                            <span class="reviewer-meta">Google · 5 ay önce</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p>"İç mekanın tasarımı gerçekten büyüleyiciydi. Jakuzi oldukça büyük ve kaliteli. İçerideki soba, soğuk günlerde içimizi ısıttı. Bungalovun sahibi Han Bey, bizimle sürekli ilgilendi. İhtiyacımız olan her şey bir telefon kadar yakındı."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">M</div>
+                        <div>
+                            <span class="reviewer-name">M.M.</span>
+                            <span class="reviewer-meta">Google · 1 yıl önce</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p>"Hafta sonu kaçamağı için geldik, beklentimizin çok üzerinde bir yerdi. Bungalowlar temiz, rahat ve her şey düşünülmüş. Sessiz, huzurlu ve doğayla baş başa kalabileceğiniz harika bir ortam. Kesinlikle tekrar geleceğiz."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">E</div>
+                        <div>
+                            <span class="reviewer-name">E.A.</span>
+                            <span class="reviewer-meta">Google · 4 ay önce</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p>"Doğa ile iç içe bir yer. Tam aradığımız gibi. Ev sahibi çok anlayışlı ve yardımsever. Ulaşımı da kolay. İyi ki tercih etmişiz. Kesinlikle tavsiye ederim."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">E</div>
+                        <div>
+                            <span class="reviewer-name">E.Ş.</span>
+                            <span class="reviewer-meta">Google · 3 ay önce</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p>"Nevşehirden Hangalow için geldim ve geldiğime her anlamda değdi 🤍 Bölgede bu tip çok fazla ev var ama gördüğüm kadarıyla hiçbirinde böyle manzara ve huzur yok. Ruhunuz dinlensin istiyorsanız tercih edeceğiniz tek yer 🤍"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">M</div>
+                        <div>
+                            <span class="reviewer-name">M.C.</span>
+                            <span class="reviewer-meta">Google · 1 yıl önce</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact bg-warm">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">İLETİŞİM</span>
+                <h2 class="section-title">Bize Ulaşın</h2>
+            </div>
+            <div class="contact-grid reveal">
+                <a href="tel:+905461955300" class="contact-card">
+                    <div class="contact-icon-wrap">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" /></svg>
+                    </div>
+                    <span class="contact-type">TELEFON</span>
+                    <span class="contact-value">0546 195 53 00</span>
+                </a>
+                <a href="https://wa.me/905461955300" class="contact-card">
+                    <div class="contact-icon-wrap">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12.05 4.35a7.2 7.2 0 0 1 6.18 10.86l.8 2.34-2.46-.74a7.2 7.2 0 1 1-4.52-12.46Z"/>
+                            <path d="M10.26 8.87c.12-.26.31-.37.57-.37h.45c.2 0 .37.1.45.29l.62 1.43c.08.2.07.37-.05.52l-.41.47c-.13.15-.15.3-.07.45.37.65.93 1.2 1.58 1.57.15.09.3.06.45-.06l.48-.41c.14-.12.31-.13.51-.05l1.43.62c.19.08.29.25.29.45v.46c0 .25-.11.44-.37.56-.37.17-.76.2-1.12.12-2.37-.55-4.24-2.42-4.79-4.79-.08-.36-.05-.75.11-1.11Z"/>
+                        </svg>
+                    </div>
+                    <span class="contact-type">WHATSAPP</span>
+                    <span class="contact-value">0546 195 53 00</span>
+                </a>
+                <a href="mailto:info@hangalow.com" class="contact-card">
+                    <div class="contact-icon-wrap">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+                    </div>
+                    <span class="contact-type">E-POSTA</span>
+                    <span class="contact-value">info@hangalow.com</span>
+                </a>
+                <a href="https://instagram.com/hangalow" class="contact-card">
+                    <div class="contact-icon-wrap">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+                    </div>
+                    <span class="contact-type">INSTAGRAM</span>
+                    <span class="contact-value">@hangalow</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section booking">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Rezervasyon</span>
+                <h2 class="section-title">Huzurunuzu Planlayın</h2>
+                <p class="section-desc">Tarihinizi seçin ve unutulmaz bir konaklama deneyimi yaşayın</p>
+            </div>
+            <div class="booking-container reveal">
+                <div class="booking-calendar">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" id="calendarPrev" aria-label="Önceki Ay">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg>
+                        </button>
+                        <h3 class="calendar-month" id="calendarMonth"></h3>
+                        <button class="calendar-nav" id="calendarNext" aria-label="Sonraki Ay">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span>
+                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
+                    <div class="calendar-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot legend-available"></span>
+                            <span>Müsait</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot legend-selected"></span>
+                            <span>Seçili</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot legend-range"></span>
+                            <span>Aralık</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-form">
+                    <div class="booking-dates">
+                        <div class="date-display">
+                            <label>Giriş Tarihi</label>
+                            <div class="date-value" id="checkinDisplay">Tarih seçin</div>
+                        </div>
+                        <div class="date-arrow">→</div>
+                        <div class="date-display">
+                            <label>Çıkış Tarihi</label>
+                            <div class="date-value" id="checkoutDisplay">Tarih seçin</div>
+                        </div>
+                    </div>
+                    <div class="booking-nights" id="bookingNights" style="display:none;">
+                        <span id="nightCount"></span> gece konaklama
+                    </div>
+                    <p class="booking-form-intro">Tarihlerinizi seçin, iletişim bilgilerinizi bırakın; uygunluk ve detaylar için size kısa sürede dönüş yapalım.</p>
+                    <div class="form-group">
+                        <label for="guestName">Ad Soyad</label>
+                        <input type="text" id="guestName" placeholder="Adınız ve soyadınız" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guestPhone">Telefon</label>
+                            <input type="tel" id="guestPhone" placeholder="+90 5XX XXX XX XX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guestEmail">E-posta</label>
+                            <input type="email" id="guestEmail" placeholder="ornek@email.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guestCount">Misafir Sayısı</label>
+                            <div class="select-field">
+                                <span class="select-field-icon" aria-hidden="true">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </span>
+                                <select id="guestCount">
+                                    <option value="1">1 Misafir</option>
+                                    <option value="2" selected>2 Misafir</option>
+                                    <option value="3">3 Misafir</option>
+                                    <option value="4">4 Misafir</option>
+                                    <option value="5">5 Misafir</option>
+                                    <option value="6">6 Misafir</option>
+                                </select>
+                                <span class="select-field-chevron" aria-hidden="true">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="guestNote">Not (İsteğe Bağlı)</label>
+                        <textarea id="guestNote" rows="3"
+                            placeholder="Özel istekleriniz varsa belirtebilirsiniz..."></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-full btn-lg" id="bookingSubmit">
+                        <span>Rezervasyon Talebi Gönder</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </button>
+                    <p class="booking-note">* Rezervasyon talebiniz en kısa sürede değerlendirilecek ve size dönüş
+                        yapılacaktır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Success Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="modal-icon">✓</div>
+            <h3>Rezervasyon Talebiniz Alındı!</h3>
+            <p>En kısa sürede sizinle iletişime geçeceğiz. Teşekkür ederiz.</p>
+            <button class="btn btn-primary" id="modalClose">Tamam</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-card">
+                <div class="footer-top" style="justify-content: center;">
+                    <div class="footer-brand" style="flex-direction: column; text-align: center;">
+                        <img src="images/hangalowlogo.jpeg" alt="Hangalow Logo" class="footer-logo-img">
+                        <div style="text-align: center;">
+                            <h2 class="footer-logo-text">Hangalow</h2>
+                            <span class="footer-kicker" style="margin-top: 8px;">Ardeşen / Rize</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-info-grid">
+                    <div class="footer-info-col">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <strong>Konum</strong>
+                            <span>Merkez Mahallesi, Ardeşen / Rize</span>
+                        </div>
+                    </div>
+                    <div class="footer-info-col">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" /></svg>
+                        <div>
+                            <strong>Telefon</strong>
+                            <span>0546 195 53 00</span>
+                        </div>
+                    </div>
+                    <div class="footer-info-col">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <div>
+                            <strong>E-posta</strong>
+                            <span>info@hangalow.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="footer-copy">&copy; 2026 Hangalow. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js?v=95652037"></script>
+</body>
+
+</html>
