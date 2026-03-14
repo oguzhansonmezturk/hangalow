@@ -64,10 +64,15 @@ function initNavbar() {
         closeMobileMenu();
         window.requestAnimationFrame(() => {
             const navOffset = (navbar?.offsetHeight || 0) + 12;
-            const anchorTarget = target.querySelector('.section-header, .container > *') || target;
+            const anchorTarget =
+                target.querySelector('.section-header') ||
+                target.querySelector('.section-title') ||
+                target.querySelector('h2, h3') ||
+                target;
+            const breathingRoom = target.id === 'about' ? 28 : 22;
             const targetTop = Math.max(
                 0,
-                anchorTarget.getBoundingClientRect().top + window.pageYOffset - navOffset
+                anchorTarget.getBoundingClientRect().top + window.pageYOffset - navOffset - breathingRoom
             );
 
             window.scrollTo({ top: targetTop, behavior: 'smooth' });
