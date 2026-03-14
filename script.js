@@ -60,6 +60,7 @@ function initNavbar() {
         navLinks?.classList.remove('active');
         navToggle?.classList.remove('active');
         langSelector?.classList.remove('active');
+        document.body.classList.remove('menu-open');
     };
 
     const scrollToTarget = (target) => {
@@ -116,14 +117,37 @@ function initNavbar() {
 function initMobileMenu() {
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
+    const navbar = document.getElementById('navbar');
     const langSelector = document.querySelector('.lang-selector');
 
     if (!toggle || !links) return;
 
-    toggle.addEventListener('click', () => {
+    const closeMenu = () => {
+        toggle.classList.remove('active');
+        links.classList.remove('active');
+        langSelector?.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    };
+
+    toggle.addEventListener('click', (event) => {
+        event.stopPropagation();
         langSelector?.classList.remove('active');
         toggle.classList.toggle('active');
         links.classList.toggle('active');
+        document.body.classList.toggle('menu-open', links.classList.contains('active'));
+    });
+
+    document.addEventListener('click', (event) => {
+        if (window.innerWidth > 768) return;
+        if (!navbar?.contains(event.target)) {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
     });
 }
 
