@@ -13,6 +13,38 @@ document.addEventListener('DOMContentLoaded', () => {
     initLanguage();
 });
 
+let mobileMenuScrollY = 0;
+
+function setMenuOpenState(isOpen) {
+    const body = document.body;
+    const navLinks = document.getElementById('navLinks');
+    const navToggle = document.getElementById('navToggle');
+    const langSelector = document.querySelector('.lang-selector');
+
+    if (!navLinks || !navToggle) return;
+
+    if (isOpen) {
+        mobileMenuScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+        body.style.top = `-${mobileMenuScrollY}px`;
+        body.classList.add('menu-open');
+        navLinks.classList.add('active');
+        navToggle.classList.add('active');
+        langSelector?.classList.remove('active');
+        return;
+    }
+
+    const wasOpen = body.classList.contains('menu-open');
+    navLinks.classList.remove('active');
+    navToggle.classList.remove('active');
+    langSelector?.classList.remove('active');
+    body.classList.remove('menu-open');
+    body.style.top = '';
+
+    if (wasOpen) {
+        window.scrollTo(0, mobileMenuScrollY);
+    }
+}
+
 /* ===========================
    Preloader
    =========================== */
@@ -57,10 +89,7 @@ function initNavbar() {
     const langSelector = document.querySelector('.lang-selector');
 
     const closeMobileMenu = () => {
-        navLinks?.classList.remove('active');
-        navToggle?.classList.remove('active');
-        langSelector?.classList.remove('active');
-        document.body.classList.remove('menu-open');
+        setMenuOpenState(false);
     };
 
     const scrollToTarget = (target) => {
@@ -123,18 +152,13 @@ function initMobileMenu() {
     if (!toggle || !links) return;
 
     const closeMenu = () => {
-        toggle.classList.remove('active');
-        links.classList.remove('active');
-        langSelector?.classList.remove('active');
-        document.body.classList.remove('menu-open');
+        setMenuOpenState(false);
     };
 
     toggle.addEventListener('click', (event) => {
         event.stopPropagation();
         langSelector?.classList.remove('active');
-        toggle.classList.toggle('active');
-        links.classList.toggle('active');
-        document.body.classList.toggle('menu-open', links.classList.contains('active'));
+        setMenuOpenState(!links.classList.contains('active'));
     });
 
     document.addEventListener('click', (event) => {

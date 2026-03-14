@@ -302,6 +302,9 @@ body {
 
 body.menu-open {
     overflow: hidden;
+    position: fixed;
+    inset: 0;
+    width: 100%;
 }
 
 .navbar.scrolled .nav-toggle span {
@@ -1806,29 +1809,34 @@ body.menu-open {
 
     .nav-links {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
+        width: 100%;
+        min-height: 100svh;
+        height: 100dvh;
         background: rgba(250, 248, 245, 0.98);
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 8px;
-        transform: translateY(-100%);
+        transform: translate3d(0, -104%, 0);
         opacity: 0;
         visibility: hidden;
+        pointer-events: none;
+        overscroll-behavior: contain;
         transition:
             transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
             opacity 0.3s ease,
             visibility 0.3s ease;
+        z-index: 998;
     }
 
     .nav-links.active {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
         opacity: 1;
         visibility: visible;
+        pointer-events: auto;
     }
 
     .nav-links a {
@@ -5289,6 +5297,10 @@ body.preload-active .scroll-line {
 
 .gallery-item img {
     object-position: center center;
+}
+
+.gallery-breakfast-shot img {
+    object-position: center 32%;
 }
 
 .gallery-overlay {
