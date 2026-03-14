@@ -5445,3 +5445,359 @@ body.preload-active .scroll-line {
         transform: rotate(180deg);
     }
 }
+
+/* ===================================
+   THEME TOGGLE & DARK MODE
+   ================================= */
+:root {
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --color-bg: #151311;
+    --color-bg-warm: #1d1916;
+    --color-bg-card: #221d19;
+    --color-bg-alt: #2a241f;
+    --color-surface: #201b17;
+    --color-text: #f7efe4;
+    --color-text-secondary: #c8b8a2;
+    --color-text-muted: #9d8c79;
+    --color-text-light: #6f6153;
+    --color-primary: #d1a75d;
+    --color-primary-light: #e2be78;
+    --color-primary-dark: #b88b46;
+    --color-primary-bg: rgba(209, 167, 93, 0.14);
+    --color-primary-hover: #deba72;
+    --color-border: rgba(255, 239, 219, 0.12);
+    --color-border-light: rgba(255, 245, 232, 0.08);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.24);
+    --shadow-md: 0 14px 28px rgba(0, 0, 0, 0.26);
+    --shadow-lg: 0 22px 52px rgba(0, 0, 0, 0.34);
+    --shadow-xl: 0 34px 74px rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
+}
+
+html.theme-ready body,
+html.theme-ready .navbar,
+html.theme-ready .nav-links,
+html.theme-ready .nav-links a,
+html.theme-ready .lang-btn,
+html.theme-ready .lang-menu,
+html.theme-ready .lang-menu a,
+html.theme-ready .theme-toggle,
+html.theme-ready .theme-toggle-thumb,
+html.theme-ready .amenity-feature-card,
+html.theme-ready .amenity-feature-icon,
+html.theme-ready .review-card,
+html.theme-ready .policy-card,
+html.theme-ready .contact-card,
+html.theme-ready .contact-icon-wrap,
+html.theme-ready .location-split,
+html.theme-ready .location-map::after,
+html.theme-ready .map-card,
+html.theme-ready .booking-container,
+html.theme-ready .booking-calendar,
+html.theme-ready .booking-form,
+html.theme-ready .booking-dates,
+html.theme-ready .booking-nights,
+html.theme-ready .filter-btn,
+html.theme-ready .gallery-overlay,
+html.theme-ready .select-field select,
+html.theme-ready .booking-form .form-group input,
+html.theme-ready .booking-form .form-group select,
+html.theme-ready .booking-form .form-group textarea,
+html.theme-ready .calendar-day,
+html.theme-ready .calendar-nav,
+html.theme-ready .footer,
+html.theme-ready .footer-card {
+    transition:
+        background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        fill 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        stroke 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-right {
+    gap: 10px;
+}
+
+.theme-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition:
+        transform 0.28s ease,
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        color 0.35s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.16);
+}
+
+.theme-toggle:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(209, 167, 93, 0.18),
+        0 14px 24px rgba(0, 0, 0, 0.16);
+}
+
+.theme-toggle-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+.theme-toggle-icon {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.72;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.theme-toggle-thumb {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: #fff8ef;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+    transition:
+        transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+:root[data-theme="dark"] .theme-toggle-thumb {
+    transform: translateX(26px);
+    background: #f0d49a;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+}
+
+.theme-toggle-sun {
+    opacity: 1;
+}
+
+:root[data-theme="light"] .theme-toggle-moon {
+    opacity: 0.46;
+}
+
+:root[data-theme="dark"] .theme-toggle-sun {
+    opacity: 0.42;
+}
+
+:root[data-theme="dark"] .theme-toggle-moon {
+    opacity: 1;
+}
+
+.navbar.scrolled .theme-toggle {
+    background: rgba(255, 255, 255, 0.72);
+    border-color: var(--color-border);
+    color: var(--color-text);
+    box-shadow: 0 10px 24px rgba(44, 36, 23, 0.1);
+}
+
+body.menu-open .theme-toggle {
+    background: rgba(255, 255, 255, 0.84);
+    border-color: var(--color-border);
+    color: var(--color-text);
+    box-shadow: 0 12px 28px rgba(44, 36, 23, 0.14);
+}
+
+:root[data-theme="dark"] body {
+    background:
+        radial-gradient(circle at top, rgba(209, 167, 93, 0.08), transparent 28%),
+        linear-gradient(180deg, #151311 0%, #181411 100%);
+}
+
+:root[data-theme="dark"] .about,
+:root[data-theme="dark"] .gallery,
+:root[data-theme="dark"] .reviews,
+:root[data-theme="dark"] .location {
+    background: var(--color-bg) !important;
+}
+
+:root[data-theme="dark"] .amenities,
+:root[data-theme="dark"] .policies,
+:root[data-theme="dark"] .contact,
+:root[data-theme="dark"] .booking {
+    background: var(--color-bg-warm) !important;
+}
+
+:root[data-theme="dark"] .navbar.scrolled {
+    background: rgba(19, 17, 15, 0.82);
+    border-bottom-color: var(--color-border-light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme="dark"] .navbar.scrolled .logo-text,
+:root[data-theme="dark"] .navbar.scrolled .nav-links a,
+:root[data-theme="dark"] .navbar.scrolled .lang-btn {
+    color: var(--color-text);
+}
+
+:root[data-theme="dark"] .navbar.scrolled .nav-toggle span {
+    background: var(--color-text);
+}
+
+:root[data-theme="dark"] .navbar.scrolled .theme-toggle,
+:root[data-theme="dark"] body.menu-open .theme-toggle {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--color-border-light);
+    color: var(--color-text);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme="dark"] .nav-links {
+    background: rgba(19, 17, 15, 0.96);
+}
+
+:root[data-theme="dark"] .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme="dark"] .lang-btn {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+:root[data-theme="dark"] .lang-menu,
+:root[data-theme="dark"] .amenity-feature-card,
+:root[data-theme="dark"] .review-card,
+:root[data-theme="dark"] .policy-card,
+:root[data-theme="dark"] .contact-card,
+:root[data-theme="dark"] .location-split,
+:root[data-theme="dark"] .map-card,
+:root[data-theme="dark"] .booking-container,
+:root[data-theme="dark"] .booking-calendar,
+:root[data-theme="dark"] .booking-form,
+:root[data-theme="dark"] .footer-card {
+    background: rgba(33, 29, 25, 0.94) !important;
+    border-color: var(--color-border-light) !important;
+    box-shadow: 0 22px 52px rgba(0, 0, 0, 0.34) !important;
+}
+
+:root[data-theme="dark"] .amenity-feature-icon,
+:root[data-theme="dark"] .contact-icon-wrap,
+:root[data-theme="dark"] .times div,
+:root[data-theme="dark"] .booking-dates,
+:root[data-theme="dark"] .booking-nights,
+:root[data-theme="dark"] .select-field select,
+:root[data-theme="dark"] .calendar-nav,
+:root[data-theme="dark"] .filter-btn {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--color-border) !important;
+}
+
+:root[data-theme="dark"] .booking-form .form-group input,
+:root[data-theme="dark"] .booking-form .form-group select,
+:root[data-theme="dark"] .booking-form .form-group textarea {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: var(--color-border) !important;
+    color: var(--color-text) !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="dark"] .booking-form .form-group input::placeholder,
+:root[data-theme="dark"] .booking-form .form-group textarea::placeholder {
+    color: var(--color-text-light);
+}
+
+:root[data-theme="dark"] .filter-btn {
+    color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .filter-btn.active {
+    background: rgba(209, 167, 93, 0.14) !important;
+    border-color: rgba(209, 167, 93, 0.28) !important;
+    box-shadow: inset 0 0 0 1px rgba(209, 167, 93, 0.16), 0 12px 22px rgba(0, 0, 0, 0.22);
+}
+
+:root[data-theme="dark"] .calendar-day {
+    color: var(--color-text);
+}
+
+:root[data-theme="dark"] .calendar-day.today {
+    border-color: rgba(209, 167, 93, 0.78);
+}
+
+:root[data-theme="dark"] .calendar-day.selected,
+:root[data-theme="dark"] .calendar-day.range-start,
+:root[data-theme="dark"] .calendar-day.range-end {
+    background: var(--color-primary);
+    color: #1a1612;
+    box-shadow: 0 8px 18px rgba(209, 167, 93, 0.24);
+}
+
+:root[data-theme="dark"] .calendar-day.in-range {
+    background: rgba(209, 167, 93, 0.18);
+    color: var(--color-primary-light);
+}
+
+:root[data-theme="dark"] .calendar-day.disabled {
+    color: rgba(255, 239, 219, 0.28);
+}
+
+:root[data-theme="dark"] .location-map::after {
+    background: linear-gradient(180deg, rgba(10, 9, 8, 0.12) 0%, rgba(10, 9, 8, 0.04) 24%, rgba(10, 9, 8, 0.5) 100%);
+}
+
+:root[data-theme="dark"] .gallery-overlay {
+    background: linear-gradient(to top, rgba(7, 7, 7, 0.78) 0%, rgba(7, 7, 7, 0.18) 48%, transparent 80%);
+}
+
+:root[data-theme="dark"] body.menu-open .logo-text {
+    color: var(--color-text) !important;
+}
+
+:root[data-theme="dark"] body.menu-open .nav-toggle span {
+    background: var(--color-text) !important;
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 52px;
+        height: 30px;
+    }
+
+    .theme-toggle-track {
+        padding: 0 7px;
+    }
+
+    .theme-toggle-thumb {
+        top: 4px;
+        left: 4px;
+        width: 20px;
+        height: 20px;
+    }
+
+    :root[data-theme="dark"] .theme-toggle-thumb {
+        transform: translateX(24px);
+    }
+}

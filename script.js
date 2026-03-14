@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCalendar();
     initBookingForm();
     initMobileMenu();
+    initThemeToggle();
     initLanguage();
 });
 
@@ -43,6 +44,50 @@ function setMenuOpenState(isOpen) {
     if (wasOpen) {
         window.scrollTo(0, mobileMenuScrollY);
     }
+}
+
+function getCurrentTheme() {
+    return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+}
+
+function updateThemeToggleControl() {
+    const toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+
+    const isDark = getCurrentTheme() === 'dark';
+    const label = getTranslationPack().themeToggleLabel || 'Toggle theme';
+
+    toggle.setAttribute('aria-label', label);
+    toggle.setAttribute('title', label);
+    toggle.setAttribute('aria-pressed', String(isDark));
+}
+
+function applyTheme(theme, persist = true) {
+    const nextTheme = theme === 'dark' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = nextTheme;
+
+    if (persist) {
+        localStorage.setItem('hangalow-theme', nextTheme);
+    }
+
+    updateThemeToggleControl();
+}
+
+function initThemeToggle() {
+    const toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+
+    const savedTheme = localStorage.getItem('hangalow-theme');
+    applyTheme(savedTheme === 'dark' ? 'dark' : 'light', false);
+
+    toggle.addEventListener('click', () => {
+        document.querySelector('.lang-selector')?.classList.remove('active');
+        applyTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
+    });
+
+    window.requestAnimationFrame(() => {
+        document.documentElement.classList.add('theme-ready');
+    });
 }
 
 /* ===========================
@@ -535,6 +580,7 @@ const translations = {
         code: 'TR',
         flag: '🇹🇷',
         langName: 'Türkçe',
+        themeToggleLabel: 'Temayı Değiştir',
         title: 'Hangalow | Ardeşen, Rize - Doğanın Kalbinde Huzur',
         description: "Hangalow - Rize Ardeşen'de doğayla iç içe, modern bungalow konaklama. Jakuzi, şömine, havuz, ücretsiz kahvaltı ve eşsiz deniz manzarası.",
         nav: ['Hakkımızda', 'Olanaklar', 'Galeri', 'Konum', 'Yorumlar', 'İletişim', 'Rezervasyon'],
@@ -666,6 +712,7 @@ const translations = {
         code: 'EN',
         flag: '🇬🇧',
         langName: 'English',
+        themeToggleLabel: 'Toggle Theme',
         title: 'Hangalow | Ardesen, Rize - A Peaceful Stay in Nature',
         description: 'Hangalow - a stylish bungalow stay in Ardesen, Rize with a private jacuzzi, fireplace, heated pool, complimentary breakfast, and sweeping sea views.',
         nav: ['About', 'Amenities', 'Gallery', 'Location', 'Reviews', 'Contact', 'Booking'],
@@ -793,6 +840,7 @@ const translations = {
         code: 'DE',
         flag: '🇩🇪',
         langName: 'Deutsch',
+        themeToggleLabel: 'Darstellung wechseln',
         title: 'Hangalow | Ardesen, Rize - Ruhe mitten in der Natur',
         description: 'Hangalow - ein stilvoller Bungalow-Aufenthalt in Ardesen, Rize mit privatem Whirlpool, Kamin, beheiztem Pool, kostenlosem Frühstück und weitem Meerblick.',
         nav: ['Über uns', 'Ausstattung', 'Galerie', 'Lage', 'Bewertungen', 'Kontakt', 'Reservierung'],
@@ -920,6 +968,7 @@ const translations = {
         code: 'RU',
         flag: '🇷🇺',
         langName: 'Русский',
+        themeToggleLabel: 'Сменить тему',
         title: 'Hangalow | Ардешен, Ризе - спокойный отдых среди природы',
         description: 'Hangalow - стильное бунгало в Ардешене, Ризе с частным джакузи, камином, бассейном с подогревом, бесплатным завтраком и просторным видом на море.',
         nav: ['О нас', 'Удобства', 'Галерея', 'Локация', 'Отзывы', 'Контакты', 'Бронирование'],
@@ -1047,6 +1096,7 @@ const translations = {
         code: 'AR',
         flag: '🇸🇦',
         langName: 'العربية',
+        themeToggleLabel: 'تبديل المظهر',
         title: 'Hangalow | أرديشن، ريزه - إقامة هادئة وسط الطبيعة',
         description: 'Hangalow - إقامة أنيقة في بنغالو بأرديشن، ريزه مع جاكوزي خاص ومدفأة ومسبح دافئ وفطور مجاني وإطلالة بحرية واسعة.',
         nav: ['من نحن', 'المرافق', 'المعرض', 'الموقع', 'التقييمات', 'التواصل', 'الحجز'],
@@ -1221,6 +1271,12 @@ function applyLanguage(lang) {
     const navToggle = document.getElementById('navToggle');
     if (navToggle) navToggle.setAttribute('aria-label', t.aria.menu);
 
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-label', t.themeToggleLabel);
+        themeToggle.setAttribute('title', t.themeToggleLabel);
+    }
+
     document.querySelectorAll('.lang-menu a').forEach((link) => {
         const href = link.getAttribute('href') || '';
         const linkLang = new URLSearchParams(href.split('?')[1] || '').get('lang') || 'tr';
@@ -1394,6 +1450,8 @@ function applyLanguage(lang) {
     if (typeof window.refreshCalendarLanguage === 'function') {
         window.refreshCalendarLanguage();
     }
+
+    updateThemeToggleControl();
 }
 
 function setText(selector, text) {
