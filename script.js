@@ -180,21 +180,57 @@ function initMobileMenu() {
    =========================== */
 
 function initScrollAnimations() {
+    const reveals = Array.from(document.querySelectorAll('.reveal'));
+
+    const assignRevealStyles = () => {
+        reveals.forEach((el, index) => {
+            el.classList.remove('reveal-left', 'reveal-right', 'reveal-up');
+
+            const rect = el.getBoundingClientRect();
+            const centerX = rect.left + (rect.width / 2);
+            const viewportWidth = window.innerWidth;
+
+            if (viewportWidth <= 768 || el.classList.contains('section-header')) {
+                el.classList.add('reveal-up');
+            } else if (centerX < viewportWidth * 0.38) {
+                el.classList.add('reveal-left');
+            } else if (centerX > viewportWidth * 0.62) {
+                el.classList.add('reveal-right');
+            } else {
+                el.classList.add('reveal-up');
+            }
+
+            if (
+                el.classList.contains('review-card') ||
+                el.classList.contains('policy-card') ||
+                el.classList.contains('booking-container') ||
+                el.classList.contains('location-split')
+            ) {
+                el.classList.add('reveal-soft');
+            }
+
+            el.style.setProperty('--reveal-delay', `${Math.min((index % 4) * 70, 210)}ms`);
+        });
+    };
+
+    assignRevealStyles();
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 setTimeout(() => {
                     entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
                 }, index * 100);
-                
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.14,
+        rootMargin: '0px 0px -10% 0px'
     });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    reveals.forEach(el => observer.observe(el));
+    window.addEventListener('resize', assignRevealStyles);
 }
 
 /* ===========================

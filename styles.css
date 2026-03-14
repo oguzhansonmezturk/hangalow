@@ -1724,19 +1724,45 @@ body.menu-open {
 
 /* Reveal Animation (CSS only fallback + JS enhanced) */
 .reveal {
+    --reveal-x: 0px;
+    --reveal-y: 26px;
+    --reveal-scale: 0.985;
+    --reveal-rotate: 0deg;
+    --reveal-delay: 0ms;
     opacity: 0;
-    transform: translateY(26px) scale(0.985);
+    transform: translate3d(var(--reveal-x), var(--reveal-y), 0) scale(var(--reveal-scale)) rotate(var(--reveal-rotate));
     filter: blur(10px);
     transition:
         opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
         transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
         filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay);
     will-change: opacity, transform;
+}
+
+.reveal.reveal-left {
+    --reveal-x: -42px;
+    --reveal-y: 14px;
+    --reveal-scale: 0.988;
+}
+
+.reveal.reveal-right {
+    --reveal-x: 42px;
+    --reveal-y: 14px;
+    --reveal-scale: 0.988;
+}
+
+.reveal.reveal-up {
+    --reveal-y: 30px;
+}
+
+.reveal.reveal-soft {
+    --reveal-scale: 0.975;
 }
 
 .reveal.active {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
     filter: blur(0);
 }
 @keyframes fadeUpIn {
@@ -5386,6 +5412,14 @@ body.preload-active .scroll-line {
         padding: 92px 22px 28px;
         justify-content: flex-start;
         overflow-y: auto;
+    }
+
+    body.menu-open .logo-text {
+        color: var(--color-text) !important;
+    }
+
+    body.menu-open .nav-toggle span {
+        background: var(--color-text) !important;
     }
 }
 
