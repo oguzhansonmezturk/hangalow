@@ -54,10 +54,12 @@ function initNavbar() {
     const navbar = document.getElementById('navbar');
     const navLinks = document.getElementById('navLinks');
     const navToggle = document.getElementById('navToggle');
+    const langSelector = document.querySelector('.lang-selector');
 
     const closeMobileMenu = () => {
         navLinks?.classList.remove('active');
         navToggle?.classList.remove('active');
+        langSelector?.classList.remove('active');
     };
 
     const scrollToTarget = (target) => {
@@ -114,8 +116,12 @@ function initNavbar() {
 function initMobileMenu() {
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
+    const langSelector = document.querySelector('.lang-selector');
+
+    if (!toggle || !links) return;
 
     toggle.addEventListener('click', () => {
+        langSelector?.classList.remove('active');
         toggle.classList.toggle('active');
         links.classList.toggle('active');
     });

@@ -2010,7 +2010,7 @@ body {
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     z-index: 1001;
 }
-.lang-selector:hover .lang-menu {
+.lang-selector.active .lang-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -2257,13 +2257,17 @@ body {
         gap: 20px;
     }
     .lang-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        background: transparent;
-        text-align: center;
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        left: auto;
+        min-width: 170px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        box-shadow: var(--shadow-lg);
+        background: #fff;
+        text-align: left;
     }
 }
 
@@ -2473,7 +2477,7 @@ body {
 .lang-chevron {
     transition: transform 0.2s ease;
 }
-.lang-selector:hover .lang-chevron {
+.lang-selector.active .lang-chevron {
     transform: rotate(180deg);
 }
 .lang-menu a {
@@ -5301,10 +5305,59 @@ body.preload-active .scroll-line {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 14px !important;
     }
+
+    .navbar .nav-inner {
+        grid-template-columns: minmax(0, 1fr) auto auto !important;
+        padding: 0 18px !important;
+        column-gap: 10px;
+    }
+
+    .nav-logo {
+        min-width: 0;
+        gap: 10px;
+    }
+
+    .logo-text {
+        font-size: 1.05rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nav-right {
+        gap: 8px;
+    }
+
+    .lang-selector {
+        margin-right: 0;
+    }
+
+    .lang-btn {
+        padding: 6px 10px;
+        font-size: 0.78rem;
+    }
+
+    .nav-links {
+        padding: 92px 22px 28px;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
 }
 
 @media (max-width: 520px) {
     .gallery-grid {
         grid-template-columns: 1fr !important;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .lang-selector:hover .lang-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .lang-selector:hover .lang-chevron {
+        transform: rotate(180deg);
     }
 }
